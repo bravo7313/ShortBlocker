@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">Shorts Blocker</string>
+    <string name="service_description">Watches only the YouTube and Instagram apps to detect the Shorts or Reels screen and press Back. It does not read, store or share any content.</string>
+    <string name="tagline">Blocks YouTube Shorts &amp; Instagram Reels</string>
+    <string name="tagline2">Open source • No ads • No internet access</string>
+    <string name="coming_soon">Coming soon to Google Play</string>
+
+    <string name="label_youtube">YouTube Shorts</string>
+    <string name="label_instagram">Instagram Reels</string>
+
+    <string name="status_on">Protection is ON</string>
+    <string name="status_on_desc">Your selected apps are protected. Everything else works normally.</string>
+    <string name="status_paused">Paused</string>
+    <string name="status_paused_desc">The service is running, but every blocker below is switched off.</string>
+    <string name="status_off">Protection is OFF</string>
+    <string name="status_off_desc">Turn on Shorts Blocker in Accessibility settings to start blocking.</string>
+
+    <string name="btn_enable">Turn on protection</string>
+    <string name="btn_manage">Manage in Accessibility settings</string>
+
+    <string name="toggle_youtube">Block YouTube Shorts</string>
+    <string name="toggle_youtube_desc">Regular YouTube videos keep working</string>
+    <string name="toggle_instagram">Block Instagram Reels</string>
+    <string name="toggle_instagram_desc">Feed, Stories and DMs keep working</string>
+    <string name="toggle_reminders">Creative reminders</string>
+    <string name="toggle_reminders_desc">A friendly nudge whenever a Short or Reel is blocked</string>
+
+    <string name="count_youtube">Shorts blocked</string>
+    <string name="count_instagram">Reels blocked</string>
+    <string name="count_note">Counted only on this phone</string>
+
+    <string name="disclosure_title">Accessibility permission</string>
+    <string name="disclosure_body">Shorts Blocker uses Android\'s Accessibility Service to notice when the YouTube Shorts or Instagram Reels screen is open, and then presses Back.\n\nIt only watches the YouTube and Instagram apps. It does not read, store or share your content, messages or personal data, and it has no internet access.</string>
+    <string name="disclosure_agree">Agree and continue</string>
+    <string name="disclosure_cancel">Cancel</string>
+
+    <string name="privacy_title">Your privacy</string>
+    <string name="privacy_body">• Only watches the YouTube and Instagram apps, nothing else\n• Never reads, stores or shares what you watch or type\n• Has no internet permission, so it cannot send data anywhere\n• The counters above are saved only on your phone\n• The full source code is public so you can verify all of this</string>
+    <string name="why_title">Why the Accessibility permission?</string>
+    <string name="why_body">Android offers no other way for an app to know which screen YouTube or Instagram is showing. Shorts Blocker uses this permission only to notice the Shorts or Reels screen and press Back.</string>
+
+    <string name="about_title">About</string>
+    <string name="about_body">An open-source application built and maintained by Atharva Saraf.</string>
+    <string name="about_license_label">Open-source licence</string>
+    <string name="about_license_value">MIT</string>
+    <string name="about_dev_label">Original developer</string>
+    <string name="about_dev_value">Atharva Saraf</string>
+    <string name="about_made_with">Made with care by Atharva Saraf</string>
+
+    <string name="btn_source">Source code</string>
+    <string name="btn_privacy">Privacy policy</string>
+    <string name="footer">© 2026 Atharva Saraf. Released under the MIT License.\nv1.2 • Not affiliated with or endorsed by YouTube, Google, Instagram or Meta.</string>
+
+    <string name="notif_channel_name">Status</string>
+    <string name="notif_channel_reminders">Reminders</string>
+    <string name="notif_title_on">Shorts Blocker is ON</string>
+    <string name="notif_title_paused">Shorts Blocker is paused</string>
+    <string name="notif_text">Blocking %1$s • %2$d blocked</string>
+    <string name="notif_text_paused">All blockers are switched off</string>
+
+    <!-- TODO: replace YOUR_USERNAME with your GitHub username -->
+    <string name="url_source" translatable="false">https://github.com/YOUR_USERNAME/ShortsBlocker</string>
+    <string name="url_privacy" translatable="false">https://github.com/YOUR_USERNAME/ShortsBlocker/blob/main/PRIVACY.md</string>
+</resources>

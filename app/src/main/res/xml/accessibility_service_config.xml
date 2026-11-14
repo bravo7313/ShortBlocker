@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shorts Blocker - Copyright (c) 2026 Atharva Saraf - MIT License (see LICENSE) -->
+<!-- Scope is deliberately minimal: only the YouTube and Instagram apps, only window events. -->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged|typeWindowContentChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagReportViewIds"
+    android:canRetrieveWindowContent="true"
+    android:isAccessibilityTool="false"
+    android:notificationTimeout="0"
+    android:packageNames="com.google.android.youtube,com.instagram.android"
+    android:description="@string/service_description" />

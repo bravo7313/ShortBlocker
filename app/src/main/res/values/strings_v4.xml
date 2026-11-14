@@ -1,0 +1,24 @@
+<resources>
+    <string name="status_bank">Paused for banking</string>
+    <string name="status_bank_desc">Open your banking or UPI app now. When you\'re done, tap the Shorts Blocker tile in Quick Settings (or the notification) to turn protection back on.</string>
+
+    <string name="bank_title">Using banking or UPI apps?</string>
+    <string name="bank_body">Many banking and UPI apps refuse to open while any accessibility service is on. That is a security feature, and Shorts Blocker does not try to hide from it.\n\nBefore opening one, pull down Quick Settings and tap the Shorts Blocker tile to pause protection. When you\'re done, tap the tile (or the notification) to turn it back on.</string>
+    <string name="btn_add_tile">Add Quick Settings tile</string>
+    <string name="tile_label">Shorts Blocker</string>
+    <string name="tile_on">On</string>
+    <string name="tile_paused">Paused</string>
+    <string name="tile_manual">Open Quick Settings, tap the edit (pencil) icon and drag the Shorts Blocker tile into your tiles.</string>
+
+    <string name="notif_title_bank">Shorts Blocker paused for banking</string>
+    <string name="notif_text_bank">Tap to turn protection back on when you\'re done</string>
+
+    <string name="toggle_strict">Strict mode</string>
+    <string name="toggle_strict_desc">Adds a 30-second wait and a typed phrase before you can switch a blocker off</string>
+    <string name="gate_title">Switch it off?</string>
+    <string name="gate_message">Strict mode is on. To continue, wait %2$d seconds and type:\n\n%1$s</string>
+    <string name="gate_phrase" translatable="false">I choose to unblock</string>
+    <string name="gate_wait">Wait %1$ds</string>
+    <string name="gate_confirm">Switch off</string>
+    <string name="gate_cancel">Keep blocking</string>
+</resources>

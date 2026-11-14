@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.ShortsBlocker.App" parent="android:Theme.DeviceDefault.Light.NoActionBar">
+        <item name="android:windowBackground">@color/sb_bg</item>
+        <item name="android:statusBarColor">@color/sb_bg</item>
+        <item name="android:navigationBarColor">@color/sb_bg</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

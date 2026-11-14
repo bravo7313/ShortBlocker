@@ -1,0 +1,9 @@
+<resources>
+    <color name="sb_bg">#0E111A</color>
+    <color name="sb_card">#171C28</color>
+    <color name="sb_stroke">#2A3142</color>
+    <color name="sb_text">#ECEFF6</color>
+    <color name="sb_subtext">#9AA3B5</color>
+    <color name="sb_accent">#6C86FF</color>
+    <color name="sb_on_accent">#0E111A</color>
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+    <color name="sb_bg">#F4F6FA</color>
+    <color name="sb_card">#FFFFFF</color>
+    <color name="sb_stroke">#DDE2EC</color>
+    <color name="sb_text">#151A26</color>
+    <color name="sb_subtext">#5B6475</color>
+    <color name="sb_accent">#3B5BFF</color>
+    <color name="sb_on_accent">#FFFFFF</color>
+    <color name="sb_on">#1FA971</color>
+    <color name="sb_paused">#E6A100</color>
+    <color name="sb_off">#E5484D</color>
+</resources>

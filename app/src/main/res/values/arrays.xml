@@ -1,0 +1,18 @@
+<resources>
+    <string-array name="yt_reminders">
+        <item>Shorts? Not today 🚫|You came for one video. We\'re keeping you from the 47th. You\'re welcome.</item>
+        <item>Plot twist: you\'re in control 🎬|Shorts swiped away. Your attention span just did a tiny victory lap.</item>
+        <item>Scroll avoided! 🛡️|That was a Short. Your future self just high-fived you.</item>
+        <item>Back to the good stuff 📺|Regular YouTube is all yours. Shorts are on a break.</item>
+        <item>Nice catch 🎯|You were about to lose 20 minutes to \"just one more\". Not this time.</item>
+        <item>Thumb, step away from the swipe ✋|Pick something you actually want to watch.</item>
+    </string-array>
+    <string-array name="ig_reminders">
+        <item>Reels? Reel-ly not now 🎞️|Your thumbs just earned a well-deserved rest.</item>
+        <item>Infinite scroll: denied ♾️🚫|You opened Instagram for \"just a sec\". Let\'s keep it that way.</item>
+        <item>Caught in the loop! 🌀|Stepped out before the \"one more reel\" trap closed.</item>
+        <item>Your time, your rules ⏳|Reels blocked. Stories and DMs are still waiting for you.</item>
+        <item>That\'s a wrap 🎬|One less scroll you didn\'t plan on.</item>
+        <item>Look up, the real world is HD 🌅|Reels blocked. Go say hi to something offline.</item>
+    </string-array>
+</resources>
