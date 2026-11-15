@@ -2,7 +2,7 @@
  * Application: Shorts Blocker
  * Copyright (c) 2026 Atharva Saraf
  * Original Developer: Atharva Saraf
- * GitHub: https://github.com/YOUR_USERNAME
+ * GitHub: https://github.com/bravo7313
  *
  * Licensed under the MIT License.
  * See LICENSE file for details.

@@ -58,7 +58,6 @@
     <string name="notif_text">Blocking %1$s • %2$d blocked</string>
     <string name="notif_text_paused">All blockers are switched off</string>
 
-    <!-- TODO: replace YOUR_USERNAME with your GitHub username -->
-    <string name="url_source" translatable="false">https://github.com/YOUR_USERNAME/ShortsBlocker</string>
-    <string name="url_privacy" translatable="false">https://github.com/YOUR_USERNAME/ShortsBlocker/blob/main/PRIVACY.md</string>
+    <string name="url_source" translatable="false">https://github.com/bravo7313/ShortBlocker</string>
+    <string name="url_privacy" translatable="false">https://github.com/bravo7313/ShortBlocker/blob/master/PRIVACY.md</string>
 </resources>
