@@ -24,11 +24,11 @@ Shorts links shared from other apps (`youtube.com/shorts/ID`) are rewritten to n
 
 ## Permissions
 
-| Permission | Why |
-|---|---|
+| Permission                           | Why                                                                   |
+| ------------------------------------ | --------------------------------------------------------------------- |
 | Accessibility Service (user-enabled) | To detect the Shorts / Reels screen in the YouTube and Instagram apps |
-| `POST_NOTIFICATIONS` | To show the status notification and reminder pop-ups |
-| *(no INTERNET)* | The app has no network access at all |
+| `POST_NOTIFICATIONS`                 | To show the status notification and reminder pop-ups                  |
+| _(no INTERNET)_                      | The app has no network access at all                                  |
 
 ## Install
 
@@ -40,7 +40,7 @@ Shorts links shared from other apps (`youtube.com/shorts/ID`) are rewritten to n
 ## Build from source
 
 ```
-git clone https://github.com/YOUR_USERNAME/ShortsBlocker
+git clone https://github.com/bravo7313/ShortBlocker
 cd ShortsBlocker
 ./gradlew assembleDebug
 ```

@@ -16,8 +16,6 @@ import android.content.SharedPreferences
 import android.os.SystemClock
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
-import android.util.Log
-
 /**
  * Watches ONLY the YouTube and Instagram apps (see res/xml/accessibility_service_config.xml).
  * When the Shorts / Reels screen is on screen it presses Back.
@@ -66,7 +64,6 @@ class ShortsBlockerService : AccessibilityService() {
         if (now - lastBlock < BLOCK_COOLDOWN_MS) return
 
         val root = rootInActiveWindow ?: return
-        debugDumpIds(root)
         if (root.packageName?.toString() != pkg) return
 
         if (isTargetScreen(root, target)) {
@@ -75,23 +72,6 @@ class ShortsBlockerService : AccessibilityService() {
             Prefs.incrementBlocked(this, target)
             StatusNotifier.showStatus(this)
             StatusNotifier.remind(this, target)
-        }
-    }
-    private var lastDump = ""
-    private fun debugDumpIds(root: AccessibilityNodeInfo) {
-        val ids = sortedSetOf<String>()
-        fun walk(n: AccessibilityNodeInfo?) {
-            if (n == null) return
-            n.viewIdResourceName?.let { ids.add(it.substringAfter(":id/")) }
-            for (i in 0 until n.childCount) walk(n.getChild(i))
-        }
-        walk(root)
-        val joined = ids.joinToString(", ")
-        if (joined != lastDump) {
-            lastDump = joined
-            val hits = ids.filter { it.contains("reel", true) || it.contains("short", true) }
-            Log.d("ShortsDebug", "CANDIDATES: ${hits.joinToString(", ")}")
-            joined.chunked(3000).forEachIndexed { i, part -> Log.d("ShortsDebug", "ALL[$i]: $part") }
         }
     }
     private fun isTargetScreen(root: AccessibilityNodeInfo, target: Target): Boolean {
