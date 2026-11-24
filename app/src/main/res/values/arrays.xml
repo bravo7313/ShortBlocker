@@ -15,4 +15,10 @@
         <item>That\'s a wrap 🎬|One less scroll you didn\'t plan on.</item>
         <item>Look up, the real world is HD 🌅|Reels blocked. Go say hi to something offline.</item>
     </string-array>
+    <string-array name="fb_reminders">
+        <item>Reels? Not on this feed 🎬|Facebook\'s still here. The endless scroll isn\'t.</item>
+        <item>Scroll stopped 🛑|You came to check on friends, not to lose 20 minutes.</item>
+        <item>Nice try, thumb 👍|Reels blocked. Posts and Marketplace still work.</item>
+        <item>Back to real life 🌿|That was a Reel. Your time is worth more.</item>
+    </string-array>
 </resources>

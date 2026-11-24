@@ -8,7 +8,7 @@
  * See LICENSE file for details.
  */
 
-package com.example.shortblocker
+package `in`.sarafonline.shortblocker
 
 import android.accessibilityservice.AccessibilityService
 import android.content.Intent
@@ -16,6 +16,7 @@ import android.content.SharedPreferences
 import android.os.SystemClock
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
+
 /**
  * Watches ONLY the YouTube and Instagram apps (see res/xml/accessibility_service_config.xml).
  * When the Shorts / Reels screen is on screen it presses Back.
@@ -23,6 +24,7 @@ import android.view.accessibility.AccessibilityNodeInfo
  */
 
 class ShortsBlockerService : AccessibilityService() {
+
 
     companion object {
         private const val CONTENT_THROTTLE_MS = 100L  // content events fire constantly
@@ -80,6 +82,10 @@ class ShortsBlockerService : AccessibilityService() {
         }
         for (id in target.selectedTabIds) {
             val nodes = root.findAccessibilityNodeInfosByViewId(id)
+            if (nodes != null && nodes.any { it.isSelected }) return true
+        }
+        for (text in target.selectedTabTexts) {
+            val nodes = root.findAccessibilityNodeInfosByText(text)
             if (nodes != null && nodes.any { it.isSelected }) return true
         }
         return false

@@ -1,4 +1,4 @@
-package com.example.shortblocker.ui.theme
+package `in`.sarafonline.shortblocker.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

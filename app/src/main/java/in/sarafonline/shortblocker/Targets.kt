@@ -8,7 +8,7 @@
  * See LICENSE file for details.
  */
 
-package com.example.shortblocker
+package `in`.sarafonline.shortblocker
 
 /** One app + short-video feature we know how to detect. */
 class Target(
@@ -20,6 +20,7 @@ class Target(
     /** Bottom-nav tab IDs that count as "Shorts/Reels" when currently selected. */
     val selectedTabIds: Array<String>,
     /** string-array of "Title|Body" reminder messages. */
+    val selectedTabTexts: Array<String> = emptyArray(),
     val remindersRes: Int
 )
 
@@ -51,8 +52,19 @@ object Targets {
         ),
         remindersRes = R.array.ig_reminders
     )
+    val FACEBOOK = Target(
+        id = "fb",
+        packageName = "com.facebook.katana",
+        labelRes = R.string.label_facebook,
+        viewIds = emptyArray(),                  // fill in after testing (step 7)
+        selectedTabIds = emptyArray(),
+        selectedTabTexts = arrayOf("Reels"),     // starting guess, must be tested
+        remindersRes = R.array.fb_reminders
+    )
 
-    val ALL = listOf(YOUTUBE, INSTAGRAM)
+
+
+    val ALL = listOf(YOUTUBE, INSTAGRAM, FACEBOOK)
 
     fun forPackage(pkg: String?): Target? = ALL.firstOrNull { it.packageName == pkg }
 }

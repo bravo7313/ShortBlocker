@@ -1,4 +1,4 @@
-package com.example.shortblocker
+package `in`.sarafonline.shortblocker
 
 import org.junit.Test
 

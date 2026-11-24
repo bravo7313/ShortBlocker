@@ -2,13 +2,13 @@
  * Application: Shorts Blocker
  * Copyright (c) 2026 Atharva Saraf
  * Original Developer: Atharva Saraf
- * GitHub: https://github.com/YOUR_USERNAME
+ * GitHub: https://github.com/bravo7313
  *
  * Licensed under the MIT License.
  * See LICENSE file for details.
  */
 
-package com.example.shortblocker
+package `in`.sarafonline.shortblocker
 
 import android.Manifest
 import android.app.Activity
@@ -44,13 +44,12 @@ class MainActivity : Activity() {
     )
 
     private val toggles = mutableListOf<Toggle>()
+    private val statViews = mutableMapOf<Target, TextView>()
 
     private lateinit var statusDot: View
     private lateinit var statusTitle: TextView
     private lateinit var statusDesc: TextView
     private lateinit var enableButton: Button
-    private lateinit var ytCount: TextView
-    private lateinit var igCount: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,22 +76,38 @@ class MainActivity : Activity() {
         statusTitle = findViewById(R.id.statusTitle)
         statusDesc = findViewById(R.id.statusDesc)
         enableButton = findViewById(R.id.enableButton)
-        ytCount = findViewById(R.id.ytCount)
-        igCount = findViewById(R.id.igCount)
 
+        // One switch per app, built from Targets.ALL
         val container = findViewById<LinearLayout>(R.id.togglesContainer)
-        addToggle(container, R.string.toggle_youtube, R.string.toggle_youtube_desc, true,
-            { Prefs.isEnabled(this, Targets.YOUTUBE) },
-            { Prefs.setEnabled(this, Targets.YOUTUBE, it) })
-        addToggle(container, R.string.toggle_instagram, R.string.toggle_instagram_desc, true,
-            { Prefs.isEnabled(this, Targets.INSTAGRAM) },
-            { Prefs.setEnabled(this, Targets.INSTAGRAM, it) })
-        addToggle(container, R.string.toggle_strict, R.string.toggle_strict_desc, true,
-            { Prefs.strictOn(this) },
-            { Prefs.setStrict(this, it) })
-        addToggle(container, R.string.toggle_reminders, R.string.toggle_reminders_desc, false,
-            { Prefs.remindersOn(this) },
-            { Prefs.setReminders(this, it) })
+        for (t in Targets.ALL) {
+            addToggle(
+                container,
+                getString(R.string.toggle_block_format, getString(t.labelRes)),
+                getString(R.string.toggle_block_desc),
+                true,
+                { Prefs.isEnabled(this, t) },
+                { Prefs.setEnabled(this, t, it) }
+            )
+        }
+        addToggle(
+            container,
+            getString(R.string.toggle_strict), getString(R.string.toggle_strict_desc), true,
+            { Prefs.strictOn(this) }, { Prefs.setStrict(this, it) }
+        )
+        addToggle(
+            container,
+            getString(R.string.toggle_reminders), getString(R.string.toggle_reminders_desc), false,
+            { Prefs.remindersOn(this) }, { Prefs.setReminders(this, it) }
+        )
+
+        // One counter row per app, built from Targets.ALL
+        val stats = findViewById<LinearLayout>(R.id.statsContainer)
+        for (t in Targets.ALL) {
+            val row = layoutInflater.inflate(R.layout.item_stat, stats, false)
+            row.findViewById<TextView>(R.id.statName).text = getString(t.labelRes)
+            statViews[t] = row.findViewById(R.id.statValue)
+            stats.addView(row)
+        }
 
         enableButton.setOnClickListener {
             if (ServiceState.isEnabled(this)) openAccessibilitySettings() else showDisclosure()
@@ -110,12 +125,12 @@ class MainActivity : Activity() {
     }
 
     private fun addToggle(
-        parent: LinearLayout, title: Int, desc: Int, gated: Boolean,
+        parent: LinearLayout, title: String, desc: String, gated: Boolean,
         get: () -> Boolean, set: (Boolean) -> Unit
     ) {
         val row = layoutInflater.inflate(R.layout.item_toggle, parent, false)
-        row.findViewById<TextView>(R.id.toggleTitle).setText(title)
-        row.findViewById<TextView>(R.id.toggleDesc).setText(desc)
+        row.findViewById<TextView>(R.id.toggleTitle).text = title
+        row.findViewById<TextView>(R.id.toggleDesc).text = desc
         toggles += Toggle(row.findViewById(R.id.toggleSwitch), gated, get, set)
         parent.addView(row)
     }
@@ -136,8 +151,7 @@ class MainActivity : Activity() {
             }
         }
 
-        ytCount.text = Prefs.blockedCount(this, Targets.YOUTUBE).toString()
-        igCount.text = Prefs.blockedCount(this, Targets.INSTAGRAM).toString()
+        for ((t, v) in statViews) v.text = Prefs.blockedCount(this, t).toString()
 
         val serviceOn = ServiceState.isEnabled(this)
         val anyOn = Prefs.anyEnabled(this)

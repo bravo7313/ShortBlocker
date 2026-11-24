@@ -8,7 +8,7 @@
  * See LICENSE file for details.
  */
 
-package com.example.shortblocker
+package `in`.sarafonline.shortblocker
 
 import android.app.PendingIntent
 import android.content.Intent

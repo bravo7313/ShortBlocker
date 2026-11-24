@@ -7,6 +7,9 @@
 
     <string name="label_youtube">YouTube Shorts</string>
     <string name="label_instagram">Instagram Reels</string>
+    <string name="label_facebook">Facebook Reels</string>
+    <string name="toggle_block_format">Block %1$s</string>
+    <string name="toggle_block_desc">The rest of the app keeps working</string>
 
     <string name="status_on">Protection is ON</string>
     <string name="status_on_desc">Your selected apps are protected. Everything else works normally.</string>

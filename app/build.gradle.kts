@@ -4,17 +4,17 @@ plugins {
 }
 
 android {
-    namespace = "com.example.shortblocker"
+    namespace = "in.sarafonline.shortblocker"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "com.example.shortblocker"
+        applicationId = "in.sarafonline.shortblocker"
         minSdk = 24
         targetSdk = 37
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 3
+        versionName = "1.2.4"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -23,7 +23,7 @@ android {
         release {
             optimization {
                 enable = true
-                packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
+                packageScope = setOf("androidx.**")
             }
         }
     }

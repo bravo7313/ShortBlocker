@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Shorts Blocker** · Developer: Atharva Saraf · Applies to version 1.2.2 and later · Last updated: 15 November 2026
+**Shorts Blocker** · Developer: Atharva Saraf · Applies to version 1.2.2 and later · Last updated: 24 November 2026
 
 ## Summary
 
@@ -14,7 +14,7 @@ None. The developer receives no data from the app: no personal information, no u
 
 The app stores only the following in its private storage on your phone:
 
-- Whether the YouTube blocker and the Instagram blocker are switched on
+- Whether the YouTube blocker, the Instagram blocker, and Facebook blocker are switched on
 - Whether Strict mode and the reminder notifications are switched on
 - Whether protection was paused using the Quick Settings tile
 - A count of how many Shorts and Reels have been blocked
@@ -23,9 +23,9 @@ This data is never sent anywhere. App backup is disabled, and the data is delete
 
 ## How the app uses the Accessibility Service
 
-Shorts Blocker uses Android's Accessibility Service API for one purpose: to detect when the YouTube Shorts screen or the Instagram Reels screen is showing, and then press the Back button.
+Shorts Blocker uses Android's Accessibility Service API for one purpose: to detect when the YouTube Shorts screen, the Instagram Reels, or Facebook Reels screen is showing, and then press the Back button.
 
-- **Which apps:** The service is declared for only two apps, YouTube (`com.google.android.youtube`) and Instagram (`com.instagram.android`). Android does not deliver events from any other app to it.
+- **Which apps:** The service is declared for only two apps, YouTube (`com.google.android.youtube`), Instagram (`com.instagram.android`), and Facebook (`com.facebook.katana`). Android does not deliver events from any other app to it.
 - **What it looks at:** The service is permitted to read window content in those two apps. The app uses this only to check for specific internal screen elements (view identifiers) that exist while Shorts or Reels are showing, and whether the Reels tab is selected.
 - **What it does not do:** It does not read, record, store or transmit text, messages, comments, search queries, passwords, personal information or what you watch. It does not perform gestures and does not observe key presses.
 - **The action it takes:** It presses Back, and it updates a local counter.

@@ -2,15 +2,15 @@
 
 An open-source Android app that blocks **YouTube Shorts** and **Instagram Reels** while leaving the rest of YouTube and Instagram working normally.
 
-**Latest release: [v1.2.2](https://github.com/bravo7313/ShortBlocker/releases/latest)** · License: [MIT](LICENSE) · Developer: Atharva Saraf
+**Latest release: [v1.2.4](https://github.com/bravo7313/ShortBlocker/releases/latest)** · License: [MIT](LICENSE) · Developer: Atharva Saraf
 
 > **Availability:** A Google Play version is being prepared and is **not yet available**. Until then, install the signed APK from [GitHub Releases](https://github.com/bravo7313/ShortBlocker/releases).
 
-> Shorts Blocker is an independent project. It is not affiliated with, endorsed by, or sponsored by Google, YouTube, Instagram or Meta. All product names and trademarks belong to their respective owners.
+> Shorts Blocker is an independent project. It is not affiliated with, endorsed by, or sponsored by Google, YouTube, Instagram, Facebook or Meta. All product names and trademarks belong to their respective owners.
 
 ## Features
 
-- **Separate switches** for blocking YouTube Shorts and Instagram Reels
+- **Separate switches** for blocking YouTube Shorts, Instagram Reels, and Facebook Reels
 - **Status notification** that shows when protection is on and what it is blocking
 - **Optional reminder pop-ups** when a Short or Reel is blocked (can be switched off)
 - **Strict mode** (optional): switching a blocker off requires a 30-second wait and a typed phrase
@@ -24,8 +24,8 @@ An open-source Android app that blocks **YouTube Shorts** and **Instagram Reels*
 
 Android does not let one app see which screen another app is showing, except through the **Accessibility Service** API. Shorts Blocker uses it in a deliberately narrow way:
 
-1. The service is declared for only two apps: YouTube (`com.google.android.youtube`) and Instagram (`com.instagram.android`). Android does not deliver events from any other app to it. See [`accessibility_service_config.xml`](app/src/main/res/xml/accessibility_service_config.xml).
-2. When an event arrives, the service checks whether the Shorts player or the Reels screen is showing. It does this by looking for specific internal view identifiers (and, for Instagram, whether the Reels tab is selected). See [`Targets.kt`](app/src/main/java/com/example/shortblocker/Targets.kt).
+1. The service is declared for only three apps: YouTube (`com.google.android.youtube`), Instagram (`com.instagram.android`), and Facebook (`com.facebook.katana`). Android does not deliver events from any other app to it. See [`accessibility_service_config.xml`](app/src/main/res/xml/accessibility_service_config.xml).
+2. When an event arrives, the service checks whether the Shorts player or the Reels screen is showing. It does this by looking for specific internal view identifiers (and, for Instagram, whether the Reels tab is selected). See [`Targets.kt`](app/src/main/java/com/sarafonline/shortblocker/Targets.kt).
 3. If it finds one and that blocker is switched on, it presses **Back**.
 
 The service is allowed to read window content in those two apps, because that is how view identifiers are found. The code does not read, log, store or transmit text, messages, passwords or anything else. It does not perform gestures and does not observe key presses. The service is declared with `isAccessibilityTool="false"`: Shorts Blocker is not an assistive technology.
@@ -34,7 +34,7 @@ The service is allowed to read window content in those two apps, because that is
 
 | Permission                                                | Why it is needed                                                         |
 | --------------------------------------------------------- | ------------------------------------------------------------------------ |
-| Accessibility Service (you enable it in Android settings) | To detect the Shorts and Reels screens in the YouTube and Instagram apps |
+| Accessibility Service (you enable it in Android settings) | To detect the Shorts and Reels screens in the YouTube, Instagram, and Facebook apps |
 | `POST_NOTIFICATIONS` (Android 13+)                        | To show the status notification and the optional reminders               |
 | _No `INTERNET` permission_                                | The app makes no network requests                                        |
 
@@ -111,7 +111,7 @@ The debug APK is created in `app/build/outputs/apk/debug/`. A GitHub Actions wor
 | File                            | Purpose                                                              |
 | ------------------------------- | -------------------------------------------------------------------- |
 | `ShortsBlockerService.kt`       | The Accessibility Service that detects Shorts/Reels and presses Back |
-| `Targets.kt`                    | Package names and view identifiers for YouTube and Instagram         |
+| `Targets.kt`                    | Package names and view identifiers for YouTube, Instagram, and Facebook         |
 | `StatusNotifier.kt`             | Status, reminder and "paused" notifications                          |
 | `PauseTileService.kt`           | Quick Settings tile                                                  |
 | `Prefs.kt`                      | The settings and counters stored on the device                       |

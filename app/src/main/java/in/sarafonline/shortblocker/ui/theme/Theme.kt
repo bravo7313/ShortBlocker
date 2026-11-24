@@ -1,6 +1,5 @@
-package com.example.shortblocker.ui.theme
+package `in`.sarafonline.shortblocker.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
